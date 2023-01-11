@@ -7,18 +7,18 @@ services:
     volumes:
       - ./app:/app
     environment:
-      - DB_HOST=DDJbase
+      - DB_HOST=database
       - DB_NAME=dbname
       - DB_USER=dbuser
-      - DB_PASS=Ivolga`1
+      - DB_PASS=pass
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
     depends_on:
-      - DDJbase
-  DDJbase:
+      - database
+  database:
     image: postgres:14.6-alpine
-    entrypoint:
+    environment:
       - POSTGRES_DB=dbname
       - POSTGRES_USER=dbuser
-      - POSTGRES_PASSWORD=Ivolga`1
+      - POSTGRES_PASSWORD=pass
 
