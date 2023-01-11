@@ -1,6 +1,6 @@
 from django.core.validators import MaxValueValidator
 from django.db import models
-from app.clients import Client
+from clients.models import Client
 
 
 class Service(models.Model):
